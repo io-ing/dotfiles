@@ -47,6 +47,8 @@ nnoremap <silent> <C-m> :Marks<CR>
 "nnoremap <silent> <C-t> :History<CR>
 "nnoremap <silent> <C-f> :Rg<CR> " Requires ripgrep
 
+Plug 'preservim/tagbar'
+
 call plug#end()
 
 filetype plugin indent off " 关闭自动缩进
