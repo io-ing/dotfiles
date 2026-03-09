@@ -5,6 +5,9 @@ set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
+# ── pdbrc ───────────────────────────────────────────────────
+cp ~/.pdbrc              "$DOTFILES/pdbrc"
+
 # ── Claude Code (~/.claude) ─────────────────────────────────
 cp ~/.claude/CLAUDE.md      "$DOTFILES/claude/CLAUDE.md"
 cp ~/.claude/settings.json  "$DOTFILES/claude/settings.json"

@@ -4,6 +4,9 @@ set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
+# ── pdbrc ───────────────────────────────────────────────────
+cp "$DOTFILES/pdbrc" ~/.pdbrc
+
 # ── shell 配置（符号链接方式，与原机器一致）────────────────
 ln -sf "$DOTFILES/bashrc"    ~/.bashrc
 ln -sf "$DOTFILES/gitconfig" ~/.gitconfig
