@@ -16,7 +16,5 @@ rsync -a --delete ~/.claude/commands/ "$DOTFILES/claude/commands/"
 cp ~/.codex/config.toml     "$DOTFILES/codex/config.toml"
 
 rsync -a --delete ~/.codex/skills/    "$DOTFILES/codex/skills/"
-rsync -a --delete ~/.codex/rules/     "$DOTFILES/codex/rules/"
-
 echo "同步完成。接下来："
 echo "  cd $DOTFILES && git add -A && git commit -m 'chore: sync configs' && git push"

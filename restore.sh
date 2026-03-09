@@ -20,11 +20,10 @@ rsync -a "$DOTFILES/claude/skills/"   ~/.claude/skills/
 rsync -a "$DOTFILES/claude/commands/" ~/.claude/commands/
 
 # ── Codex (~/.codex) ────────────────────────────────────────
-mkdir -p ~/.codex/skills ~/.codex/rules
+mkdir -p ~/.codex/skills
 
 cp "$DOTFILES/codex/config.toml" ~/.codex/config.toml
 
 rsync -a "$DOTFILES/codex/skills/" ~/.codex/skills/
-rsync -a "$DOTFILES/codex/rules/"  ~/.codex/rules/
 
 echo "还原完成。"
