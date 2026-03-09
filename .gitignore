@@ -1,0 +1,7 @@
+# 含认证凭证，不入库
+claude/settings.local.json
+codex/auth.json
+
+# vim 临时文件
+*.swp
+*.swo

@@ -49,6 +49,94 @@ nnoremap <silent> <C-m> :Marks<CR>
 
 Plug 'preservim/tagbar'
 
+" 安装 coc.nvim（LSP 客户端）
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
 filetype plugin indent off " 关闭自动缩进
+
+" ================== coc.nvim 基本设置 ==================
+" gd 跳到定义
+nmap <silent> gd <Plug>(coc-definition)
+"" gy 跳到类型定义
+"nmap <silent> gy <Plug>(coc-type-definition)
+"" gi 跳到实现
+"nmap <silent> gi <Plug>(coc-implementation)
+" gr 查找引用
+nmap <silent> gr <Plug>(coc-references)
+
+" K 查看文档
+nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+
+"" <leader>rn 重命名
+"nmap <leader>rn <Plug>(coc-rename)
+"
+"" 格式化当前文件
+"nmap <leader>f <Plug>(coc-format)
+"
+"" 代码诊断（错误、警告）
+"nmap <leader>a <Plug>(coc-codeaction)
+"nmap <leader>qf <Plug>(coc-fix-current)
+"
+"" Tab 补全
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ coc#expandable() ? "\<C-r>=coc#expand()<CR>" :
+"      \ "\<TAB>"
+"
+"" Shift-Tab 向上选择补全
+"inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+"
+"" 如果光标在错误处，<leader>e 会显示错误
+"nnoremap <leader>e :CocDiagnostics<CR>
+"
+" 让 coc.nvim 支持标签跳转
+set updatetime=300         " 提高响应速度
+set shortmess+=c           " 不显示不必要的提示信息
+
+"" 禁用 coc.nvim 自动弹出补全
+"autocmd FileType python :call coc#config('suggest.autoTrigger', 'none')
+"
+"
+"" Ctrl-P: 如果菜单可见 → 上一个候选，否则触发补全
+"inoremap <silent><expr> <C-P> pumvisible() ? "\<C-p>" : coc#refresh()
+"" Ctrl-N: 如果菜单可见 → 下一个候选，否则触发补全
+"inoremap <silent><expr> <C-N> pumvisible() ? "\<C-n>" : coc#refresh()
+
+" 完全关闭 sign column
+set signcolumn=no
+" 关闭 coc 虚拟文本
+let g:coc_enable_virtual_text = 0
+
+"" 补全菜单背景和文字
+"highlight Pmenu      guibg=#1e1e1e guifg=#d4d4d4
+"highlight PmenuSel   guibg=#264f78 guifg=#ffffff
+"highlight PmenuSbar  guibg=#333333
+"highlight PmenuThumb guibg=#666666
+"
+"" 内联提示颜色（CocInlayHint）
+"highlight CocInlayHint guibg=#1e1e1e guifg=#9aa0a6
+
+"" 颜色方案加载
+"colorscheme default
+"
+"" 内联提示：透明背景 + 灰色文字
+""highlight CocInlayHint guibg=NONE guifg=#9aa0a6
+"highlight CocInlayHint guibg=#313459 guifg=#9aa0a6
+"
+"" 补全菜单（传统和 Coc 浮动）
+"highlight Pmenu      guibg=#1e1e1e guifg=#d4d4d4
+"highlight PmenuSel   guibg=#264f78 guifg=#ffffff
+"highlight CocFloating guibg=#1e1e1e guifg=#d4d4d4
+"highlight CocMenuSel guibg=#264f78 guifg=#ffffff
+
+set encoding=utf-8
+
+set termencoding=utf-8
+
+set fileencodings=utf-8
+
+set ambiwidth=double
+
+

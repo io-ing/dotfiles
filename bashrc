@@ -136,18 +136,43 @@ alias gc='git cherry-pick'
 alias gd='git diff --cached'
 alias gdd='git diff'
 alias ga='git add'
+gcm() {
+    git commit -m "$*"
+}
 alias ct='ctags -R --exclude=build .'
 alias sqlite3='rlwrap sqlite3'
 alias grh='git reset --hard origin/master'
+alias hw='sshpass -p 'Fanvil@20251021' ssh user_test@172.16.250.205'
+alias hw2='sshpass -p 'Fanvil@2024' ssh user_test@172.16.250.203'
+alias hw3='sshpass -p 'Fanvil@2024' ssh user_test@172.16.250.204'
 
 #function scp_work() {
+function sw2() {
+  local direction="$1"
+  local filename="$2"
+  local local_path="${3:-.}"  # 如果 $3 未提供，则默认为当前目录 "."
+  local remote_path="/C:/Users/H/Downloads"
+  #local remote_path="/C:/Users/T/Downloads/work"
+  local remote_user="T"
+  local remote_host="192.168.3.26"
+
+  if [[ "$direction" == "up" ]]; then
+    scp "$local_path/$filename" "$remote_user@$remote_host:$remote_path"
+  elif [[ "$direction" == "down" ]]; then
+    scp "$remote_user@$remote_host:$remote_path/$filename" "$local_path"
+  else
+    echo "Usage: scp_work <up|down> <filename> [<local_path>]" >&2
+    return 1
+  fi
+}
 function sw() {
   local direction="$1"
   local filename="$2"
   local local_path="${3:-.}"  # 如果 $3 未提供，则默认为当前目录 "."
-  local remote_path="/C:/Users/R/Downloads/work"
-  local remote_user="R"
-  local remote_host="172.16.29.207"
+  local remote_path="/C:/Users/H/Downloads"
+  #local remote_path="/C:/Users/T/Downloads/work"
+  local remote_user="H"
+  local remote_host="172.16.25.175"
 
   if [[ "$direction" == "up" ]]; then
     scp "$local_path/$filename" "$remote_user@$remote_host:$remote_path"
@@ -159,6 +184,11 @@ function sw() {
   fi
 }
 
+# rm 警告函数
+rm() {
+    echo -e "\033[31m警告：你正在使用 rm 命令删除文件，使用 mv 到 /tmp 代替！\033[0m"
+}
+
 export PATH=$PATH:$HOME/.local/bin
 
 export NVM_DIR="$HOME/.nvm"
@@ -167,3 +197,17 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.10
+export VIRTUALENVWRAPPER_VIRTUALENV=~/.local/bin/virtualenv
+source ~/.local/bin/virtualenvwrapper.sh
+
+#export OPENAI_BASE_URL="https://www.88code.org/openai/v1"
+#export OPENAI_API_KEY="88_5c362da62fd8d81dfd6c43dc247aeaf2cc403e8f88e88c339210224d87380f3d"
+
+#export OPENAI_BASE_URL="http://172.16.25.192:23000/v1"
+#export OPENAI_API_KEY="sk-24148c1212934e7de0073319898bcece"
+
+#export CODE_ASSIST_ENDPOINT="https://www.88code.org/gemini"
+#export GOOGLE_CLOUD_ACCESS_TOKEN="88_5c362da62fd8d81dfd6c43dc247aeaf2cc403e8f88e88c339210224d87380f3d"
+#export GOOGLE_GENAI_USE_GCA="true"

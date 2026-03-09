@@ -1,0 +1,84 @@
+model_provider = "cch"
+model = "gpt-5.2"
+model_reasoning_effort = "xhigh"
+disable_response_storage = true
+sandbox_mode = "workspace-write"
+
+[features]
+plan_tool = true
+apply_patch_freeform = true
+view_image_tool = true
+web_search_request = true
+unified_exec = false
+streamable_shell = false
+rmcp_client = true
+
+[model_providers.cch]
+name = "cch"
+base_url = "http://172.16.25.192:23000/v1"
+wire_api = "responses"
+requires_openai_auth = true
+
+[sandbox_workspace_write]
+network_access = true
+
+
+[projects."/home/zlink/Projects/lzl"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/docker_jen_taskmaster"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/JournalJourneyNext"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/openspec"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/django_restful/bookmanager"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/gerrit_monitor"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/vcore"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/OpenSpec"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/skills"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/ceshifang"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/claude-quickstarts/claude-quickstarts"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/device-testlab/testroom-manager-api-codex"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/device-testlab/device-testlab-api-codex"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/device-testlab"]
+trust_level = "trusted"
+
+[projects."/tmp"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/device-testlab/device-testlab-web-codex"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/device-testlab/codex"]
+trust_level = "trusted"
+
+[projects."/home/zlink/Projects/device-testlab/lzl1/device-testlab-api"]
+trust_level = "trusted"
+
+[projects."/www/compose/claude-code-hub"]
+trust_level = "trusted"
+
+[projects."/home/zlink/.codex"]
+trust_level = "trusted"

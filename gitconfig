@@ -6,3 +6,11 @@
 	quotepath = false
 [include]
     path = ~/.gitconfig_private
+
+# GitHub specific configuration - condition 1: by remote
+#[includeIf "hasconfig:remote.*.github.com:.*"]
+#    path = ~/.gitconfig_github
+
+# GitHub specific configuration - condition 2: by directory (fallback)
+#[includeIf "gitdir:~/Projects/lab_device_manager/"]
+#    path = ~/.gitconfig_github

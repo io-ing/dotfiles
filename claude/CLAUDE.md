@@ -1,0 +1,5 @@
+- 编写代码原则：
+  - 能不使用 try except 不要使用 try except
+  - 只在有必要的地方使用 try except，没有必要不用 try except
+  - 遵循提前返回原则，减少缩进
+  - 注释只强调 what 做了什么，而不是强调 how 怎么做，不要写没必要的注释
