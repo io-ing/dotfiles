@@ -1,0 +1,16 @@
+[user]
+	email = io.ing@outlook.com
+	name = ioing
+[core]
+	editor = vim
+	quotepath = false
+[init]
+	defaultBranch = master
+[pull]
+	ff = only
+[push]
+	default = simple
+[fetch]
+	prune = true
+[merge]
+	conflictstyle = zdiff3
