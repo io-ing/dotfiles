@@ -168,3 +168,6 @@ scpd() {
 
     scp "$host_alias:$remote_path" "$local_dir"
 }
+
+# Enable fzf shell keybindings, including Ctrl-R history search.
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
