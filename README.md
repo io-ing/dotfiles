@@ -88,7 +88,7 @@ sudo apt install ripgrep universal-ctags
 
 - `ripgrep` 用于 Vim 里的 `:Rg`
 - `universal-ctags` 用于 Tagbar
-- `coc.nvim` 需要 `node`
+- `coc.nvim` 需要 `node >= 20.19.0`；如果使用 nvm 安装 Node，安装 Bash 配置后重新打开 shell
 
 验证 Vim 配置能加载：
 
